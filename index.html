@@ -10,12 +10,13 @@
     <title>Mike Zhang</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+
 
         body {
 
@@ -65,7 +66,7 @@
 
             border-radius: 24px;
 
-            box-shadow: 0 0 30px rgba(0,0,0,0.4);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
 
             transition: 0.3s;
 
@@ -144,7 +145,7 @@
 
             margin-bottom: 25px;
 
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
 
         .card h4 {
@@ -189,7 +190,6 @@
             }
 
         }
-
     </style>
 
 </head>
@@ -206,10 +206,7 @@
 
                 <!-- 在读证明 -->
 
-                <a 
-                    class="preview-card"
-                    href="student-proof.html"
-                >
+                <a class="preview-card" id="studentLink">
 
                     <img src="student-proof.jpeg">
 
@@ -217,10 +214,7 @@
 
                 <!-- 英文教学证明 -->
 
-                <a 
-                    class="preview-card"
-                    href="english-teaching.jpeg"
-                >
+                <a class="preview-card" id="englishLink">
 
                     <img src="english-teaching.jpeg">
 
@@ -289,6 +283,42 @@
         </div>
 
     </div>
+
+    <script>
+
+        // 判断是否手机
+
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        // 在读证明
+
+        const studentLink = document.getElementById("studentLink");
+
+        if (isMobile) {
+
+            studentLink.href = "student-proof.jpeg";
+
+        } else {
+
+            studentLink.href = "student-proof.html";
+
+        }
+
+        // English Teaching
+
+        const englishLink = document.getElementById("englishLink");
+
+        if (isMobile) {
+
+            englishLink.href = "english-teaching.jpeg";
+
+        } else {
+
+            englishLink.href = "english-teaching.html";
+
+        }
+
+    </script>
 
 </body>
 
