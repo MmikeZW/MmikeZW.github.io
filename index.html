@@ -1,16 +1,342 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>MMIKEZW BLOG</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mike Zhang</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            background-color: #0f172a;
+
+            color: white;
+
+            font-family: Arial, sans-serif;
+        }
+
+        .page {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 50px 20px 120px;
+        }
+
+        .hero {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 60px;
+
+            flex-wrap: wrap;
+        }
+
+        .preview-group {
+
+            display: flex;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        .preview-card {
+
+            width: 220px;
+
+            background-color: #111c3d;
+
+            padding: 14px;
+
+            border-radius: 24px;
+
+            box-shadow: 0 0 30px rgba(0,0,0,0.4);
+
+            transition: 0.3s;
+
+            text-decoration: none;
+        }
+
+        .preview-card:hover {
+
+            transform: translateY(-5px);
+        }
+
+        .preview-card img {
+
+            width: 100%;
+
+            border-radius: 16px;
+
+            display: block;
+        }
+
+        .hero-text {
+
+            flex: 1;
+        }
+
+        h1 {
+
+            font-size: 72px;
+
+            margin-bottom: 16px;
+        }
+
+        h2 {
+
+            font-size: 28px;
+
+            font-weight: normal;
+
+            color: #94a3b8;
+
+            margin-bottom: 35px;
+        }
+
+        p {
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            color: #cbd5e1;
+
+            max-width: 720px;
+        }
+
+        .buttons {
+
+            margin-top: 45px;
+        }
+
+        .buttons a {
+
+            text-decoration: none;
+
+            color: white;
+
+            border: 1px solid white;
+
+            padding: 14px 28px;
+
+            border-radius: 12px;
+
+            margin-right: 16px;
+
+            transition: 0.3s;
+
+            display: inline-block;
+        }
+
+        .buttons a:hover {
+
+            background-color: white;
+
+            color: black;
+        }
+
+        .section {
+
+            margin-top: 120px;
+        }
+
+        .section h3 {
+
+            font-size: 42px;
+
+            margin-bottom: 40px;
+        }
+
+        .card {
+
+            background-color: #111c3d;
+
+            padding: 35px;
+
+            border-radius: 24px;
+
+            margin-bottom: 25px;
+
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .card h4 {
+
+            font-size: 28px;
+
+            margin-bottom: 16px;
+        }
+
+        .card p {
+
+            font-size: 18px;
+        }
+
+        @media (max-width: 900px) {
+
+            .hero {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .preview-group {
+
+                justify-content: center;
+            }
+
+            h1 {
+
+                font-size: 52px;
+            }
+
+            h2 {
+
+                font-size: 24px;
+            }
+
+            p {
+
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
-<body style="text-align: center;">
-    <h1>Name: 张文</h1>
-    <h1>Party: 百臭帮</h1>
-</body>
-    
 <body>
-    <h1>What I want to say: 孙朝鲁は本当にバカやろです。</h1>
+
+    <div class="page">
+
+        <div class="hero">
+
+            <!-- 图片 -->
+
+            <div class="preview-group">
+
+                <!-- 在读证明 -->
+
+                <a 
+                    class="preview-card"
+                    href="student-proof.html"
+                >
+
+                    <img src="student-proof.jpeg">
+
+                </a>
+
+                <!-- 英文教学证明 -->
+
+                <a 
+                    class="preview-card"
+                    href="english-teaching.html"
+                >
+
+                    <img src="english-teaching.jpeg">
+
+                </a>
+
+            </div>
+
+            <!-- 自我介绍 -->
+
+            <div class="hero-text">
+
+                <h1>Mike Zhang</h1>
+
+                <h2>Data Science | Machine Learning | Web3</h2>
+
+                <p>
+                    I am a Data Science undergraduate student interested in
+                    machine learning, quantitative finance, and Web3 technologies.
+                    I enjoy building ML projects, financial prediction models,
+                    and modern data visualization dashboards.
+                </p>
+
+                <div class="buttons">
+
+                    <a 
+                        href="https://github.com/MmikeZW"
+                        target="_blank"
+                    >
+                        GitHub
+                    </a>
+
+                    <a 
+                        href="https://mmikezw.com"
+                        target="_blank"
+                    >
+                        Portfolio
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Projects -->
+
+        <div class="section">
+
+            <h3>Projects</h3>
+
+            <div class="card">
+
+                <h4>Stock Prediction Using XGBoost</h4>
+
+                <p>
+                    Machine learning project evaluating whether technical indicators
+                    improve stock movement prediction performance.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h4>Interactive Dashboard</h4>
+
+                <p>
+                    Data visualization dashboard built using R and ggplot
+                    for global AI jobs analysis.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h4>Machine Learning Research</h4>
+
+                <p>
+                    Comparative study of Logistic Regression, SVM,
+                    Random Forest, and XGBoost models.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 
 </html>
