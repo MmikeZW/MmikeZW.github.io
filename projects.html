@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Projects - Mike Zhang</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at top left, #142850 0%, #0f172a 45%), #0f172a;
+
+        color: white;
+
+        font-family: Arial, sans-serif;
+      }
+
+      .page {
+        max-width: 1300px;
+
+        margin: auto;
+
+        padding: 70px 40px 120px;
+      }
+
+      .topbar {
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        margin-bottom: 70px;
+      }
+
+      h1 {
+        font-size: 64px;
+      }
+
+      .back-link {
+        color: #8b7cff;
+
+        text-decoration: none;
+
+        font-size: 22px;
+      }
+
+      .back-link:hover {
+        opacity: 0.8;
+      }
+
+      /* GRID */
+
+      .projects {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 32px;
+      }
+
+      .card {
+        background: rgba(17, 28, 61, 0.92);
+
+        border-radius: 18px;
+
+        padding: 34px;
+
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.22);
+
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card h4 {
+        font-size: 30px;
+
+        margin-bottom: 18px;
+
+        line-height: 1.35;
+      }
+
+      .card p {
+        font-size: 20px;
+
+        line-height: 1.7;
+
+        color: #cbd5e1;
+      }
+
+      @media (max-width: 900px) {
+        .projects {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 48px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <h1>Projects</h1>
+
+        <a class="back-link" href="index.html"> ← Back </a>
+      </div>
+
+      <div class="projects">
+        <div class="card">
+          <h4>Stock Price Movement Prediction</h4>
+
+          <p>
+            Machine learning project evaluating whether technical indicators
+            improve stock price movement prediction performance using Logistic
+            Regression, SVM, Random Forest, and XGBoost models.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Visualization of the Global AI Job Market</h4>
+
+          <p>
+            Data visualization dashboard built using R, ggplot, and interactive
+            analytics tools to explore global AI job salaries, experience
+            levels, remote work trends, and industry demand.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Optimization of RSA-4096 Cryptosystem</h4>
+
+          <p>
+            Cryptography optimization project improving RSA-4096 decryption
+            efficiency through parallel computing, Chinese Remainder Theorem
+            (CRT), Montgomery multiplication, and 4-bit sliding window
+            algorithms.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Natural Language Processing with Disaster Tweets</h4>
+
+          <p>
+            Natural language processing and data mining project analyzing
+            disaster tweets using text preprocessing, feature extraction, and
+            machine learning models for classification and sentiment detection.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Used-Car Trading Platform</h4>
+
+          <p>
+            Database management system project designing a used-car trading
+            platform with SQL-based data storage, transaction management, and
+            vehicle information management functionalities.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Predicting High-Value House Prices</h4>
+
+          <p>
+            Regression analysis project developing predictive models for
+            high-value house prices using statistical methods, feature
+            engineering, and housing market data analysis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,325 +1,464 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Mike Zhang</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
+      body {
+        background:
+          radial-gradient(circle at top left, #142850 0%, #0f172a 45%), #0f172a;
 
+        color: white;
 
-        body {
+        font-family: Arial, sans-serif;
+      }
 
-            background-color: #0f172a;
+      .page {
+        max-width: 1280px;
 
-            color: white;
+        margin: auto;
 
-            font-family: Arial, sans-serif;
-        }
+        padding: 70px 40px 120px;
+      }
 
+      /* =========================
+           HERO
+        ========================= */
+
+      .hero {
+        display: flex;
+
+        gap: 60px;
+
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+      }
+
+      /* Headshot */
+
+      .headshot img {
+        width: 300px;
+
+        height: auto;
+
+        display: block;
+
+        border-radius: 10px;
+
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+
+        pointer-events: none;
+
+        user-select: none;
+
+        -webkit-user-drag: none;
+      }
+
+      /* Right Intro */
+
+      .hero-right {
+        flex: 1;
+
+        min-width: 320px;
+      }
+
+      h1 {
+        font-size: 76px;
+
+        line-height: 1.05;
+
+        margin-bottom: 22px;
+
+        font-weight: 700;
+      }
+
+      h2 {
+        font-size: 30px;
+
+        font-weight: normal;
+
+        color: #94a3b8;
+
+        margin-bottom: 38px;
+      }
+
+      .intro {
+        font-size: 22px;
+
+        line-height: 1.8;
+
+        color: #dbe4f0;
+
+        max-width: 760px;
+
+        margin-bottom: 60px;
+      }
+
+      /* =========================
+           DOCUMENTS
+        ========================= */
+
+      .documents {
+        display: flex;
+
+        gap: 50px;
+
+        flex-wrap: wrap;
+
+        margin-top: 10px;
+      }
+
+      .document-item {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+      .document-item h3 {
+        font-size: 24px;
+
+        margin-bottom: 18px;
+      }
+
+      .document-preview {
+        width: 280px;
+
+        border-radius: 10px;
+
+        overflow: hidden;
+
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+
+        transition: 0.3s;
+      }
+
+      .document-preview:hover {
+        transform: translateY(-6px);
+      }
+
+      .document-preview img {
+        width: 100%;
+
+        display: block;
+      }
+
+      .view-link {
+        margin-top: 18px;
+
+        color: #8b7cff;
+
+        text-decoration: none;
+
+        font-size: 20px;
+      }
+
+      .view-link:hover {
+        text-decoration: underline;
+      }
+
+      /* =========================
+           Divider
+        ========================= */
+
+      .divider {
+        height: 1px;
+
+        background: rgba(255, 255, 255, 0.12);
+
+        margin: 90px 0;
+      }
+
+      /* =========================
+           Projects
+        ========================= */
+
+      .projects-header {
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        margin-bottom: 45px;
+      }
+
+      .section-title {
+        font-size: 54px;
+      }
+
+      .learn-more {
+        color: #8b7cff;
+
+        text-decoration: none;
+
+        font-size: 22px;
+
+        transition: 0.3s;
+      }
+
+      .learn-more:hover {
+        opacity: 0.8;
+      }
+
+      .projects {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+        gap: 28px;
+      }
+
+      .card {
+        background: rgba(17, 28, 61, 0.92);
+
+        border-radius: 18px;
+
+        padding: 34px;
+
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.22);
+
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card h4 {
+        font-size: 30px;
+
+        margin-bottom: 18px;
+
+        line-height: 1.35;
+      }
+
+      .card p {
+        font-size: 20px;
+
+        line-height: 1.7;
+
+        color: #cbd5e1;
+      }
+
+      /* =========================
+           Mobile
+        ========================= */
+
+      @media (max-width: 900px) {
         .page {
-
-            max-width: 1200px;
-
-            margin: auto;
-
-            padding: 50px 20px 120px;
+          padding: 40px 24px 90px;
         }
 
         .hero {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 60px;
-
-            flex-wrap: wrap;
+          flex-direction: column;
         }
 
-        .preview-group {
-
-            display: flex;
-
-            gap: 25px;
-
-            flex-wrap: wrap;
-        }
-
-        .preview-card {
-
-            width: 220px;
-
-            background-color: #111c3d;
-
-            padding: 14px;
-
-            border-radius: 24px;
-
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-
-            transition: 0.3s;
-
-            text-decoration: none;
-        }
-
-        .preview-card:hover {
-
-            transform: translateY(-5px);
-        }
-
-        .preview-card img {
-
-            width: 100%;
-
-            border-radius: 16px;
-
-            display: block;
-        }
-
-        .hero-text {
-
-            flex: 1;
+        .headshot img {
+          width: 220px;
         }
 
         h1 {
-
-            font-size: 72px;
-
-            margin-bottom: 16px;
+          font-size: 52px;
         }
 
         h2 {
-
-            font-size: 28px;
-
-            font-weight: normal;
-
-            color: #94a3b8;
-
-            margin-bottom: 35px;
+          font-size: 24px;
         }
 
-        p {
-
-            font-size: 20px;
-
-            line-height: 1.8;
-
-            color: #cbd5e1;
-
-            max-width: 720px;
+        .intro {
+          font-size: 19px;
         }
 
-        /* Projects */
-
-        .section {
-
-            margin-top: 120px;
+        .documents {
+          flex-direction: column;
         }
 
-        .section h3 {
-
-            font-size: 42px;
-
-            margin-bottom: 40px;
+        .document-preview {
+          width: 100%;
+          max-width: 320px;
         }
 
-        .card {
-
-            background-color: #111c3d;
-
-            padding: 35px;
-
-            border-radius: 24px;
-
-            margin-bottom: 25px;
-
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        .section-title {
+          font-size: 42px;
         }
 
-        .card h4 {
+        .projects-header {
+          flex-direction: column;
 
-            font-size: 28px;
+          align-items: flex-start;
 
-            margin-bottom: 16px;
+          gap: 16px;
         }
-
-        .card p {
-
-            font-size: 18px;
-        }
-
-        @media (max-width: 900px) {
-
-            .hero {
-
-                flex-direction: column;
-
-                align-items: flex-start;
-            }
-
-            .preview-group {
-
-                justify-content: center;
-            }
-
-            h1 {
-
-                font-size: 52px;
-            }
-
-            h2 {
-
-                font-size: 24px;
-            }
-
-            p {
-
-                font-size: 18px;
-            }
-
-        }
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="page">
+      <!-- HERO -->
 
-        <div class="hero">
+      <div class="hero">
+        <!-- Headshot -->
 
-            <!-- 图片 -->
-
-            <div class="preview-group">
-
-                <!-- 在读证明 -->
-
-                <a class="preview-card" id="studentLink">
-
-                    <img src="student-proof.jpeg">
-
-                </a>
-
-                <!-- 英文教学证明 -->
-
-                <a class="preview-card" id="englishLink">
-
-                    <img src="english-teaching.jpeg">
-
-                </a>
-
-            </div>
-
-            <!-- 自我介绍 -->
-
-            <div class="hero-text">
-
-                <h1>Mike Zhang</h1>
-
-                <h2>Data Science | Machine Learning | Web3</h2>
-
-                <p>
-                    I am a Data Science undergraduate student interested in
-                    machine learning, quantitative finance, and Web3 technologies.
-                    I enjoy building ML projects, financial prediction models,
-                    and modern data visualization dashboards.
-                </p>
-
-            </div>
-
+        <div class="headshot">
+          <img src="headshot.jpeg" alt="Mike Zhang" />
         </div>
 
-        <!-- Projects -->
+        <!-- Right -->
 
-        <div class="section">
+        <div class="hero-right">
+          <h1>Mike Zhang</h1>
 
-            <h3>Projects</h3>
+          <h2>Data & Computer Science | AI | Web3 | DeFi | IoT</h2>
 
-            <div class="card">
+          <div class="intro">
+            Major Program: Data Science
 
-                <h4>Stock Prediction Using XGBoost</h4>
+            <br />
 
-                <p>
-                    Machine learning project evaluating whether technical indicators
-                    improve stock movement prediction performance.
-                </p>
+            School: Beijing Normal-Hong Kong Baptist University (Undergraduate)
 
+            <br /><br />
+
+            Language: Mandarin, English, Cantonese (Basic), Japanese (Basic)
+
+            <br />
+
+            Active Locations: Zhuhai (Base), Macau, Hong Kong, Shenzhen,
+            Guangzhou
+          </div>
+
+          <!-- DOCUMENTS -->
+
+          <div class="documents">
+            <!-- Student Proof -->
+
+            <div class="document-item">
+              <h3>Student Proof</h3>
+
+              <a class="document-preview" id="studentLink">
+                <img src="student-proof.jpeg" alt="Student Proof" />
+              </a>
+
+              <a class="view-link" id="studentTextLink"> View Document → </a>
             </div>
 
-            <div class="card">
+            <!-- English Taught -->
 
-                <h4>Interactive Dashboard</h4>
+            <div class="document-item">
+              <h3>English Taught</h3>
 
-                <p>
-                    Data visualization dashboard built using R and ggplot
-                    for global AI jobs analysis.
-                </p>
+              <a class="document-preview" id="englishLink">
+                <img src="english-taught.jpeg" alt="English Taught" />
+              </a>
 
+              <a class="view-link" id="englishTextLink"> View Document → </a>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <div class="card">
+      <!-- Divider -->
 
-                <h4>Machine Learning Research</h4>
+      <div class="divider"></div>
 
-                <p>
-                    Comparative study of Logistic Regression, SVM,
-                    Random Forest, and XGBoost models.
-                </p>
+      <!-- Projects -->
 
-            </div>
+      <div class="projects-header">
+        <h3 class="section-title">Projects</h3>
 
+        <a class="learn-more" href="projects.html"> Learn More → </a>
+      </div>
+
+      <div class="projects">
+        <div class="card">
+          <h4>Stock Price Movement Prediction</h4>
+
+          <p>
+            Machine learning project evaluating whether technical indicators
+            improve stock price movement prediction performance using Logistic
+            Regression, SVM, Random Forest, and XGBoost models.
+          </p>
         </div>
 
+        <div class="card">
+          <h4>Optimization of RSA-4096 Cryptosystem</h4>
+
+          <p>
+            Cryptography optimization project improving RSA-4096 decryption
+            efficiency through parallel computing, Chinese Remainder Theorem
+            (CRT), Montgomery multiplication, and 4-bit sliding window
+            algorithms.
+          </p>
+        </div>
+      </div>
+
+      <!-- Divider -->
+
+      <div class="divider"></div>
+
+      <!-- Campus Leadership -->
+
+      <div class="projects-header">
+        <h3 class="section-title">Campus Leadership</h3>
+
+        <a class="learn-more" id="leadershipLink"> Learn More → </a>
+      </div>
     </div>
 
     <script>
+      // 判断是否手机
 
-        // 判断是否手机
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      // Student Proof
 
-        // 在读证明
+      const studentLink = document.getElementById("studentLink");
+      const studentTextLink = document.getElementById("studentTextLink");
 
-        const studentLink = document.getElementById("studentLink");
+      if (isMobile) {
+        studentLink.href = "student-proof.jpeg";
+        studentTextLink.href = "student-proof.jpeg";
+      } else {
+        studentLink.href = "student-proof.html";
+        studentTextLink.href = "student-proof.html";
+      }
 
-        if (isMobile) {
+      // English Taught
 
-            studentLink.href = "student-proof.jpeg";
+      const englishLink = document.getElementById("englishLink");
+      const englishTextLink = document.getElementById("englishTextLink");
 
-        } else {
+      if (isMobile) {
+        englishLink.href = "english-taught.jpeg";
+        englishTextLink.href = "english-taught.jpeg";
+      } else {
+        englishLink.href = "english-taught.html";
+        englishTextLink.href = "english-taught.html";
+      }
 
-            studentLink.href = "student-proof.html";
+      // Campus Leadership
 
-        }
+      const leadershipLink = document.getElementById("leadershipLink");
 
-        // English Teaching
-
-        const englishLink = document.getElementById("englishLink");
-
-        if (isMobile) {
-
-            englishLink.href = "english-teaching.jpeg";
-
-        } else {
-
-            englishLink.href = "english-teaching.html";
-
-        }
-
+      if (isMobile) {
+        leadershipLink.href = "campus-leadership.jpeg";
+      } else {
+        leadershipLink.href = "campus-leadership.html";
+      }
     </script>
-
-</body>
-
+  </body>
 </html>
