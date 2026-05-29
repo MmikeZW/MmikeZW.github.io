@@ -182,10 +182,10 @@
       }
 
       /* =========================
-           Projects
+           Project
         ========================= */
 
-      .projects-header {
+      .project-header {
         display: flex;
 
         justify-content: space-between;
@@ -213,7 +213,7 @@
         opacity: 0.8;
       }
 
-      .projects {
+      .project {
         display: grid;
 
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -251,6 +251,20 @@
         line-height: 1.7;
 
         color: #cbd5e1;
+      }
+
+      .project-subtitle {
+        display: block;
+        margin-top: 4px;
+        font-size: 20px;
+        font-weight: normal;
+        color: #cbd5e1;
+      }
+
+      .project-date {
+        font-size: 16px;
+        font-weight: normal;
+        color: #94a3b8;
       }
 
       /* =========================
@@ -295,7 +309,7 @@
           font-size: 42px;
         }
 
-        .projects-header {
+        .project-header {
           flex-direction: column;
 
           align-items: flex-start;
@@ -326,7 +340,9 @@
 
           <div class="intro">
             Hi, there, welcome to my page!
+
             <br />
+
             Here's some basic information about me.
 
             <br /><br />
@@ -343,7 +359,7 @@
 
             <br />
 
-            Active Locations: Zhuhai (Base), Macau, Hong Kong, Shenzhen,
+            Active Location: Zhuhai (Base), Macau, Hong Kong, Shenzhen,
             Guangzhou
           </div>
 
@@ -381,17 +397,20 @@
 
       <div class="divider"></div>
 
-      <!-- Projects -->
+      <!-- Project -->
 
-      <div class="projects-header">
-        <h3 class="section-title">Projects</h3>
+      <div class="project-header">
+        <h3 class="section-title">Project</h3>
 
-        <a class="learn-more" href="projects.html"> Learn More → </a>
+        <a class="learn-more" href="project.html"> Learn More → </a>
       </div>
 
-      <div class="projects">
+      <div class="project">
         <div class="card">
-          <h4>Stock Price Movement Prediction (2026-05)</h4>
+          <h4>
+            Stock Price Movement Prediction
+            <span class="project-date">(2026-05)</span>
+          </h4>
 
           <p>
             Machine learning project evaluating whether technical indicators
@@ -401,7 +420,10 @@
         </div>
 
         <div class="card">
-          <h4>Optimization of RSA-4096 Cryptosystem (2026-05)</h4>
+          <h4>
+            Optimization of RSA-4096 Cryptosystem
+            <span class="project-date">(2026-05)</span>
+          </h4>
 
           <p>
             Cryptography optimization project improving RSA-4096 decryption
@@ -418,7 +440,7 @@
 
       <!-- Campus Leadership -->
 
-      <div class="projects-header">
+      <div class="project-header">
         <h3 class="section-title">Campus Leadership</h3>
 
         <a class="learn-more" id="leadershipLink"> Learn More → </a>
