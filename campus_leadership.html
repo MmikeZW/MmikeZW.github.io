@@ -116,7 +116,27 @@
       <div class="topbar">
         <h1>Campus Leadership</h1>
 
-        <a class="back-link" href="index.html"> ← Back </a>
+        <a class="back-link" href="index.html" onclick="goBack(event)">
+          ← Back
+        </a>
+
+        <script>
+          function goBack(event) {
+            event.preventDefault();
+
+            const referrer = document.referrer;
+
+            // 只有上一页来自你自己的网站时，才执行浏览器返回
+            if (
+              referrer &&
+              new URL(referrer).origin === window.location.origin
+            ) {
+              window.history.back();
+            } else {
+              window.location.href = "index.html";
+            }
+          }
+        </script>
       </div>
 
       <div class="container">
