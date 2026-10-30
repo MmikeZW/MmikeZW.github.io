@@ -163,10 +163,11 @@
         text-decoration: none;
 
         font-size: 20px;
+        transition: 0.3s;
       }
 
       .view-link:hover {
-        text-decoration: underline;
+        opacity: 0.8;
       }
 
       /* =========================
@@ -374,10 +375,10 @@
 
       <!-- Project -->
 
-      <div class="project-header">
+      <div class="project-header" id="project">
         <h3 class="section-title">Project</h3>
 
-        <a class="learn-more" href="project.html"> Learn More → </a>
+        <a class="learn-more" href="project.html" onclick="sessionStorage.setItem('projectScrollY', String(window.scrollY))"> Learn More → </a>
       </div>
 
       <div class="project">
@@ -453,7 +454,7 @@
       <div class="project-header">
         <h3 class="section-title">Campus Leadership</h3>
 
-        <a class="learn-more" id="leadershipLink" href="campus_leadership.pdf">
+        <a class="learn-more" id="leadershipLink" href="campus_leadership.pdf" target="_blank">
           Learn More →
         </a>
       </div>
@@ -507,12 +508,12 @@
           <a
             class="document-preview"
             id="studentLink"
-            href="student_proof.html"
+            href="student_proof.pdf" target="_blank" rel="noopener"
           >
             <img src="student_proof.jpeg" alt="Student Proof" />
           </a>
 
-          <a class="view-link" id="studentTextLink" href="student_proof.html">
+          <a class="view-link" id="studentTextLink" href="student_proof.pdf" target="_blank" rel="noopener">
             View Document →
           </a>
         </div>
@@ -525,12 +526,12 @@
           <a
             class="document-preview"
             id="englishLink"
-            href="english_taught.html"
+            href="english_taught.pdf" target="_blank" rel="noopener"
           >
             <img src="english_taught.jpeg" alt="English Taught" />
           </a>
 
-          <a class="view-link" id="englishTextLink" href="english_taught.html">
+          <a class="view-link" id="englishTextLink" href="english_taught.pdf" target="_blank" rel="noopener">
             View Document →
           </a>
         </div>
@@ -538,45 +539,14 @@
     </div>
 
     <script>
-      // 判断是否为手机端
-
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-      // Student Proof
-
-      const studentLink = document.getElementById("studentLink");
-      const studentTextLink = document.getElementById("studentTextLink");
-
-      if (isMobile) {
-        studentLink.href = "student_proof.jpeg";
-        studentTextLink.href = "student_proof.jpeg";
-      } else {
-        studentLink.href = "student_proof.html";
-        studentTextLink.href = "student_proof.html";
-      }
-
-      // English Taught
-
-      const englishLink = document.getElementById("englishLink");
-      const englishTextLink = document.getElementById("englishTextLink");
-
-      if (isMobile) {
-        englishLink.href = "english_taught.jpeg";
-        englishTextLink.href = "english_taught.jpeg";
-      } else {
-        englishLink.href = "english_taught.html";
-        englishTextLink.href = "english_taught.html";
-      }
-
-      // Campus Leadership
-
-      const leadershipLink = document.getElementById("leadershipLink");
-
-      if (isMobile) {
-        leadershipLink.href = "campus_leadership.pdf";
-      } else {
-        leadershipLink.href = "campus_leadership.pdf";
-      }
+      // Restore the exact scroll position when returning from Project.
+      window.addEventListener("pageshow", () => {
+        const saved = sessionStorage.getItem("projectScrollY");
+        if (saved !== null) {
+          sessionStorage.removeItem("projectScrollY");
+          requestAnimationFrame(() => window.scrollTo(0, Number(saved)));
+        }
+      });
     </script>
   </body>
 </html>
